@@ -1,4 +1,4 @@
-var FileSaver = require("file-saver");
+import * as FileSaver from "file-saver";
 
 export const getKey = (value) => {
   return window.crypto.subtle.importKey("raw", value, "AES-GCM", true, [
@@ -13,7 +13,6 @@ export const formatBytes = (bytes) => {
   var kiloBytes = marker; // One Kilobyte is 1024 bytes
   var megaBytes = marker * marker; // One MB is 1024 KB
   var gigaBytes = marker * marker * marker; // One GB is 1024 MB
-  var teraBytes = marker * marker * marker * marker; // One TB is 1024 GB
 
   // return bytes if less than a KB
   if (bytes < kiloBytes) return bytes + " Bytes";

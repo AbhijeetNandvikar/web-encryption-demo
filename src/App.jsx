@@ -1,8 +1,7 @@
-import "./app.css";
-import React, { useState } from "react";
-import { startEncryption, startDecryption } from "./functions";
+import { useState } from "react";
+import { startEncryption, startDecryption } from "./utils";
 
-const App = () => {
+export const App = () => {
   const [currentFile, setCurrentFile] = useState(null);
   const [password, setPassword] = useState("");
   const [iv, setIv] = useState(null);
@@ -12,7 +11,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div>
       <h2>How to use this App?</h2>
       <ul>
         <li>
@@ -39,9 +38,9 @@ const App = () => {
         </li>
       </ul>
       <h3 style={{ marginBottom: "32px" }}>
-        Note : Don't refresh browser because initializaton vector value is
+        {`Note : Don't refresh browser because initializaton vector value is
         stored temporarily, also after decrypting file remember to give correct
-        file extension while saving file.
+        file extension while saving file.`}
       </h3>
       <div style={{ marginBottom: "25px" }}>
         <label htmlFor="passwordInput">
@@ -87,5 +86,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
